@@ -1,9 +1,8 @@
 // src/routes/shop/+page.svelte
 <script>
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
-  import { loadStripe } from '@stripe/stripe-js';
-
+  import { browser } from '$app/environment';
+  
   let products = [];
   let cart = [];
   let stripe;
@@ -29,7 +28,9 @@
       const session = await response.json();
       if (!response.ok) throw new Error(session.error);
       
-      stripe.redirectToCheckout({ sessionId: session.id });
+      if (browser && stripe) {
+        stripe.redirectToCheckout({ sessionId: session.id });
+      }
     } catch (err) {
       console.error('Checkout failed:', err);
       alert('Error processing checkout. Please try again.');
@@ -43,7 +44,10 @@
 
   onMount(async () => {
     await fetchProducts();
-    stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+    if (browser) {
+      const { loadStripe } = await import('@stripe/stripe-js');
+      stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+    }
   });
 </script>
 
@@ -65,5 +69,5 @@
       </div>
     {/each}
   </div>
-  <button class="cart-button mt-4" on:click={checkout}>Proceed to Checkout</button>
+  <button class="cart-button mt-4" on:click={checkout} disabled={cart.length === 0}>Proceed to Checkout</button>
 </main>

@@ -99,19 +99,19 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           <!-- Featured Pedal 1 -->
           <div class="pedal-card hover:scale-105 transition-transform">
-            <img src="/path-to-pedal-image-1.jpg" alt="Pedal 1" class="w-full rounded-lg">
+            <img src="/Placeholders/guitar-pedal-7.png" alt="Pedal 1" class="w-full rounded-lg">
             <h3 class="mt-4 text-xl font-semibold text-green-500 glow-effect">Pedal Name 1</h3>
             <p class="text-white">A brief description of the pedal’s unique features.</p>
           </div>
           <!-- Featured Pedal 2 -->
           <div class="pedal-card hover:scale-105 transition-transform">
-            <img src="/path-to-pedal-image-2.jpg" alt="Pedal 2" class="w-full rounded-lg">
+            <img src="/Placeholders/guitar-pedal-4.svg" alt="Pedal 2" class="w-full rounded-lg">
             <h3 class="mt-4 text-xl font-semibold text-green-500 glow-effect">Pedal Name 2</h3>
             <p class="text-white">A brief description of the pedal’s unique features.</p>
           </div>
           <!-- Featured Pedal 3 -->
           <div class="pedal-card hover:scale-105 transition-transform">
-            <img src="/path-to-pedal-image-3.jpg" alt="Pedal 3" class="w-full rounded-lg">
+            <img src="/Placeholders/guitar-pedal-1.png" alt="Pedal 3" class="w-full rounded-lg">
             <h3 class="mt-4 text-xl font-semibold text-green-500 glow-effect">Pedal Name 3</h3>
             <p class="text-white">A brief description of the pedal’s unique features.</p>
           </div>
